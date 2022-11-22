@@ -5,12 +5,18 @@ import ExpenseItem from './ExpenseItem';
 import ExpensesFilter from '../ExpenseFilter/ExpensesFilter';
 
 function Expenses(props) {
+  const [year, setYear] = useState('');
+
+  const yearChangeHandler = (event) => {
+    setYear(event.target.value);
+  };
   const expenses = props.expenses;
 
   return (
     <>
-      <ExpensesFilter />
       <Card className="expenses">
+        <ExpensesFilter yearChangeHandler={yearChangeHandler} />
+        <div>{year}</div>
         <ExpenseItem
           title={expenses[0].title}
           amount={expenses[0].amount}
