@@ -15,12 +15,15 @@ function Expenses(props) {
   return (
     <>
       <Card className="expenses">
+        {/* {expenses.filter((x) => x.year === setYear)} */}
+
         <ExpensesFilter
           yearValue={year}
           yearChangeHandler={yearChangeHandler}
         />
         {expenses.map((expense) => (
           <ExpenseItem
+            key={expense.id}
             title={expense.title}
             amount={expense.amount}
             date={expense.date}

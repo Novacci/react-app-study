@@ -3,9 +3,6 @@ import Expenses from '../Expenses/Expenses';
 import './ExpensesFilter.css';
 
 const ExpensesFilter = ({ yearChangeHandler, yearValue }) => {
-  // const yearChangeHandler = (event) => {
-  //   setYear(event.target.value); };
-
   return (
     <div className="expenses-filter">
       <div className="expenses-filter__control">
