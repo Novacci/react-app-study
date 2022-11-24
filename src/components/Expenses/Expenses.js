@@ -9,7 +9,6 @@ function Expenses(props) {
 
   const yearChangeHandler = (event) => {
     setYear(event.target.value);
-    console.log('dupa');
   };
 
   const expenses = props.items;
@@ -37,5 +36,3 @@ function Expenses(props) {
 }
 
 export default Expenses;
-
-// [1, 2, 3].filter((x) => x >= 2).filter((x) => x < 3);
