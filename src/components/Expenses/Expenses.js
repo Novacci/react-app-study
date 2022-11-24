@@ -9,29 +9,33 @@ function Expenses(props) {
 
   const yearChangeHandler = (event) => {
     setYear(event.target.value);
+    console.log('dupa');
   };
+
   const expenses = props.items;
 
   return (
     <>
       <Card className="expenses">
-        {/* {expenses.filter((x) => x.year === setYear)} */}
-
         <ExpensesFilter
           yearValue={year}
           yearChangeHandler={yearChangeHandler}
         />
-        {expenses.map((expense) => (
-          <ExpenseItem
-            key={expense.id}
-            title={expense.title}
-            amount={expense.amount}
-            date={expense.date}
-          />
-        ))}
+        {expenses
+          .filter((expense) => expense.date.getFullYear() === +year)
+          .map((expense) => (
+            <ExpenseItem
+              key={expense.id}
+              title={expense.title}
+              amount={expense.amount}
+              date={expense.date}
+            />
+          ))}
       </Card>
     </>
   );
 }
 
 export default Expenses;
+
+// [1, 2, 3].filter((x) => x >= 2).filter((x) => x < 3);
